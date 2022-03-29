@@ -35,26 +35,39 @@
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered  modal-lg">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header bg-dark text-light">
         <h5 class="modal-title" id="exampleModalLabel">New Entry</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        
         <div class="mb-3">
           <label for="txtProject" class="form-label small">Project</label>
-          <input type="text" class="form-control" id="txtProject" placeholder="Project Name">
+          <input type="text" class="form-control" id="txtProject" placeholder="Project Name" required>
+          <div id="projNameMessage" class="d-none invalid-feedback badge bg-danger text-start p-1">
+            Project Name Required
+         </div>
         </div>
         <div class="mb-3">
           <label for="txtProjectDatePicker" class="form-label small">Project Date</label>
-          <input type="text" class="form-control" id="txtProjectDatePicker" placeholder="Date">
+          <input type="text" class="form-control" id="txtProjectDatePicker" placeholder="Date" required>
+          <div id="projDateMessage" class="d-none invalid-feedback badge bg-danger text-start p-1">
+            Project Date Required
+         </div>
         </div>
         <div class="mb-3">
           <label for="txtProjectTeam" class="form-label small">Project Team</label>
           <input type="text" class="form-control" id="txtProjectTeam" placeholder="Team">
+          <div id="projTeamMessage" class="d-none invalid-feedback badge bg-danger text-start p-1">
+            Project Team Required
+         </div>
         </div>
         <div class="mb-3">
           <label for="txtProjectHours" class="form-label small">Project Hours</label>
-          <input type="text" class="form-control" id="txtProjectHours" placeholder="Hours">
+          <input type="text" class="form-control" id="txtProjectHours" placeholder="Hours" required>
+          <div id="projHoursMessage" class="d-none invalid-feedback badge bg-danger text-start p-1">
+            Project Hours Required
+         </div>
         </div>
         <div class="mb-3">
           <label for="txtProjectExpense" class="form-label small">Project Expenses</label>
@@ -68,7 +81,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" id="btnSubmit" class="btn btn-primary">Save changes</button>
+        <button type="button" id="btnSubmit" class="btn btn-success">Save changes</button>
       </div>
     </div>
   </div>

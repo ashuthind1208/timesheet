@@ -6,25 +6,84 @@ var arrProjects = [];
 
 $(document).ready(function(){
 
+  
     $( "#txtProjectDatePicker" ).datepicker();
 
-    getAllProjects();
+    //getAllProjects();
 
     $("#btnDetails").click(function(){    
-        getDateAndHoursWorked($("#ddlProjects :selected").text());        
+       getDateAndHoursWorked($("#ddlProjects :selected").text());        
     });
 
     $("#btnSubmit").click(function(){
-        var dataObj = {
-            'PROJECT': $("#txtProject").val(),
-            'DATE': moment($("#txtProjectDatePicker").val()).format("DD-MMM-YY"),
-            'HOURS':  $("#txtProjectHours").val(),
-            'Team': $("#txtProjectTeam").val(),
-            'Expense' : $("#txtProjectExpense").val(),
-            'Remarks': $("#txtProjectRemarks").val()
+
+        var count = 0;
+        var projName = $("#txtProject").val();
+        var projDate = $("#txtProjectDatePicker").val()
+        var projHours = $("#txtProjectHours").val()
+        var projTeam =  $("#txtProjectTeam").val()
+        var projExpense = $("#txtProjectExpense").val()
+        var projRemarks =  $("#txtProjectRemarks").val()
+
+        if(projName.length == 0){
+            $("#txtProject").addClass("is-invalid")
+            $("#projNameMessage").removeClass("d-none");
+            
+        }
+        else{
+            $("#txtProject").removeClass("is-invalid")
+            $("#projNameMessage").addClass("d-none")
+            count++;
         }
 
-        postdata(dataObj);
+        if(projDate.length == 0){
+            $("#txtProjectDatePicker").addClass("is-invalid")
+            $("#projDateMessage").removeClass("d-none")
+        }
+        else{
+            $("#txtProjectDatePicker").removeClass("is-invalid")
+            $("#projDateMessage").addClass("d-none")
+            count++;
+        }
+
+        if(projHours.length == 0){
+            $("#txtProjectHours").addClass("is-invalid")
+            $("#projHoursMessage").removeClass("d-none")
+            
+        }
+        else{
+            $("#txtProjectHours").removeClass("is-invalid")
+            $("#projHoursMessage").addClass("d-none")
+            count++;
+        }
+
+        if(projTeam.length == 0){
+            $("#txtProjectTeam").addClass("is-invalid")
+            $("#projTeamMessage").removeClass("d-none")
+        }
+        else{
+            $("#txtProjectTeam").removeClass("is-invalid")
+            $("#projTeamMessage").addClass("d-none")
+            count++;
+        }
+
+        console.log(count);
+
+        if(count == 4){
+
+                var dataObj = {
+                    'PROJECT': projName,
+                    'DATE': moment(projDate).format("DD-MMM-YY"),
+                    'HOURS': projHours ,
+                    'Team': projTeam,
+                    'Expense' : projExpense ,
+                    'Remarks': projRemarks
+                }
+
+                console.log(dataObj);
+
+            // postdata(dataObj);
+        }
     });
 })
 
@@ -47,7 +106,7 @@ var totalHours = 0;
       $("#spnTotalHours").text(totalHours);
     
 
-
+      $("#ddlProjects").append("<option>--Select Project--</option>")
       arrProjects.map((items)=>{  
         $("#ddlProjects").append("<option>"+items+"</option>")	
       })
@@ -107,6 +166,9 @@ function getDateAndHoursWorked(projectName){
 //
 
 function postdata(data_Params){
+
+
+
  $.ajax({
         url: API_URL,
         type: "POST",
