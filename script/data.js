@@ -9,7 +9,7 @@ $(document).ready(function(){
   
     $( "#txtProjectDatePicker" ).datepicker();
 
-    //getAllProjects();
+    getAllProjects();
 
     $("#btnDetails").click(function(){    
        getDateAndHoursWorked($("#ddlProjects :selected").text());        
@@ -82,7 +82,7 @@ $(document).ready(function(){
 
                 console.log(dataObj);
 
-            // postdata(dataObj);
+             postdata(dataObj);
         }
     });
 })
