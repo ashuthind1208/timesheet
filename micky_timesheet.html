@@ -1,0 +1,102 @@
+<div class="container p-4 "><div class="row"><div class="col-12">
+  <div class="row">
+      <div class="col-lg-12 col-md-6 col-sm 4">
+          <div id="header" class="text-center">
+            <h1>TIMESHEET</h1>
+              </div>
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-12 text-center">        
+           Total Hours : <span class="badge bg-danger h1" id="spnTotalHours" />        
+      </div>      
+  </div>
+
+
+  <div class="row pt-5">
+    <div class="col-12">
+      <h5>PROJECTS</h5> 
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-8">
+      <select id="ddlProjects" class="p-1" />   
+      <input id="btnDetails" class="m-2 p-1" type="button" text="Details" value="Details" />  <br/>
+ <span class="badge bg-secondary p-2" id="spnProjectTotalHours" >Please select the project to reflect total hours</span>
+      
+    </div>
+    <div class="col-4 text-end">
+       <button type="button" class="btn btn-dark text-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create New</button>
+    </div>
+    
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered  modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Entry</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="txtProject" class="form-label small">Project</label>
+          <input type="text" class="form-control" id="txtProject" placeholder="Project Name">
+        </div>
+        <div class="mb-3">
+          <label for="txtProjectDatePicker" class="form-label small">Project Date</label>
+          <input type="text" class="form-control" id="txtProjectDatePicker" placeholder="Date">
+        </div>
+        <div class="mb-3">
+          <label for="txtProjectTeam" class="form-label small">Project Team</label>
+          <input type="text" class="form-control" id="txtProjectTeam" placeholder="Team">
+        </div>
+        <div class="mb-3">
+          <label for="txtProjectHours" class="form-label small">Project Hours</label>
+          <input type="text" class="form-control" id="txtProjectHours" placeholder="Hours">
+        </div>
+        <div class="mb-3">
+          <label for="txtProjectExpense" class="form-label small">Project Expenses</label>
+          <input type="text" class="form-control" id="txtProjectExpense" placeholder="Expenses">
+        </div>
+        <div class="mb-3">
+          <label for="txtProjectRemarks" class="form-label small">Remarks</label>
+          <textarea class="form-control" id="txtProjectRemarks" rows="3"></textarea>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="btnSubmit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="row my-5">
+    <div class="col-12">
+      <div id="dataContainer"></div>   
+      <div id="paginationContainer" class="pagination"></div>
+    </div>
+  </div> 
+      
+</div></div>
+
+
+  
+  
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./styles/simplePagination.css" />
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://pagination.js.org/dist/2.1.5/pagination.js"></script>  
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="./script/apiURL.js"></script>
+<script src="./script/data.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>

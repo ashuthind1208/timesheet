@@ -1,0 +1,39 @@
+/**
+* CSS themes for simplePagination.js
+* Author: Flavius Matis - http://flaviusmatis.github.com/
+* URL: https://github.com/flaviusmatis/simplePagination.js
+*/
+
+ul.paginationjs-pages {
+	list-style: none;
+}
+
+.paginationjs-pages {
+	display: block;
+	overflow: hidden;
+	padding: 0 5px 5px 0;
+	margin: 0;
+}
+
+.paginationjs-pages ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.paginationjs-pages li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+
+.paginationjs-pages li a{
+	color: black;
+  float: left;
+  border: solid 1px black;
+  margin-left: 3px;
+  border-radius: 10px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
